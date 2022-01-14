@@ -50,6 +50,7 @@ src_dir=Src
 
 ## 配置platformio生成hex文件
 * 首先，在工程目录下新建extra_script.py文件（和platformio.ini在同一目录下），代码如下：
+
 ~~~
 Import("env")
 
@@ -65,4 +66,12 @@ env.AddPostAction(
 然后，在VS Code左侧项目列表打开platformio.ini文件，在最后一行增加如下代码：
 ~~~
 extra_scripts = extra_script.py
+~~~
+
+### Include 路径问题
+问题描述：创建好的工程，打开后出现无法找到Project/Inc或者Project/Src中的文件
+
+解决方法：找到.pio/generic.../idedata.json文件
+~~~
+将其中d:\\...改为D:\\
 ~~~
