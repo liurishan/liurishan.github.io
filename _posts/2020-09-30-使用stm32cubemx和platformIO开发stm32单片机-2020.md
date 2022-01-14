@@ -71,7 +71,16 @@ extra_scripts = extra_script.py
 ### Include 路径问题
 问题描述：创建好的工程，打开后出现无法找到Project/Inc或者Project/Src中的文件
 
-解决方法：找到.pio/generic.../idedata.json文件
+解决方法一：找到.pio/generic.../idedata.json文件
 ~~~
 将其中d:\\...改为D:\\
 ~~~
+
+解决方法二：找到.vscode/c_cpp_properties.json文件
+~~~
+在"includePath": []和"browse": {"path": []}中
+添加"${workspaceFolder}/**",
+
+~~~
+
+<font color="red">注意两种方法修改并保存后，要将修改的文件改为只读，否则platformIO插件在重启的时候将自动修改两个文件变回原来的内容。</font>
