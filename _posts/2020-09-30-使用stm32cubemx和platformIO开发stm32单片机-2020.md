@@ -86,3 +86,8 @@ extra_scripts = extra_script.py
 ~~~
 
 <font color="red">注意两种方法修改并保存后，要将修改的文件改为只读，否则platformIO插件在重启的时候将自动修改两个文件变回原来的内容。</font>
+
+### 出现install错误
+错误是：Error: HTTPSConnectionPool(host='api.registry.ns1.platformio.org', port=443): Max retries exceeded with url: /v3/packages/platformio/tool/tool-stm32duino (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1129)')))
+
+解决办法：关闭代理
