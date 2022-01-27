@@ -30,6 +30,8 @@ tags:                               #标签
     * 点击RCC，将HSE的选项改成晶振（crystal/ceramic resonator）
     * 来到project manager，在code generator中勾选“生成外设初始化——”选项
 
+<font color = "red" size = 6>若要用PlatformIO编译，需要改IDE设置为Makefile</font>
+
  ![配置设置](/img/生成文件配置.png)
 
 2. 然后在工程文件创建platformio.ini，把以前的工程文件粘贴到里面。
@@ -42,8 +44,8 @@ upload_protocol = jlink
 build_flags = -g
 debug_tool = jlink
 [platformio]
-include_dir=Inc
-src_dir=Src
+include_dir=Core/Inc  ;根据工程改
+src_dir=Core/Src      ;根据工程改
 ~~~
 3. 然后就可以根据数据手册编写程序了。
 
