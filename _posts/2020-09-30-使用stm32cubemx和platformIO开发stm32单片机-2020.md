@@ -47,6 +47,19 @@ debug_tool = jlink
 include_dir=Core/Inc  ;根据工程改
 src_dir=Core/Src      ;根据工程改
 ~~~
+根据具体工具型号改一些参数，例如我手中的野火指南者和下载器配置为：
+~~~
+[env:genericSTM32F103VE]
+platform = ststm32
+board = genericSTM32F103VE
+framework = stm32cube
+upload_protocol = cmsis-dap
+build_flags = -g
+debug_tool = cmsis-dap
+[platformio]
+include_dir=Core/Inc
+src_dir=Core/Src
+~~~
 3. 然后就可以根据数据手册编写程序了。
 
 
